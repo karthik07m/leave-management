@@ -1,4 +1,4 @@
-# Welcome to Hexaware FTP Training Course
+# Simple Leave Management System
 
   Please take a look at the following files
 
