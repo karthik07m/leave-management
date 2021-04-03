@@ -1,0 +1,36 @@
+.viewHis{
+    margin-left: 50px;
+}
+.logout{
+    float: right;
+}
+
+body {
+	margin: 0px;
+	font-family: "Raleway", Sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 200;
+	letter-spacing: 0.4px;
+	font-family: "Raleway", Sans-serif;
+    color: #232323;
+    text-align: center;
+}
+p {
+	font-family: 'Raleway', sans-serif;
+	font-size: 22px;
+	font-weight: 300;
+	line-height: 28px;
+	letter-spacing: 0.2px;
+    color: #252525;
+	margin-left: 300px;
+}
+.details {
+   margin-top: 10px;
+}

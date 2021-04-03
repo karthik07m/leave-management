@@ -1,0 +1,65 @@
+
+
+    <div *ngFor="let e of employees">
+    <ng-container *ngIf="e.empManagerId==check">
+      <div class="row" style="border:1px solid;background:rgb(15, 14, 14);" >
+        <div class="col-lg-4" style="color:white"><p>Employee Id :{{e.empId}}</p></div>
+        <div class="col-lg-4" style="color:white"><p>Employee Name :{{e.empName}}</p></div>
+        <div class="col-lg-4" style="color:white"><p>Employee Leave Balance :{{e.empLeaveBalance}}</p></div>
+      </div>
+    <table class="table" border="1" align="center">
+    <tr> <th>LeaveId</th>
+        <th>EmpNo</th>
+        <th>Start-Date</th>
+        <th>End-Date</th>
+        <th>Leave Type</th>
+        <th>Status</th>
+        <th>Reason</th> 
+        <th>Applied On</th>
+        <th>Comment</th>
+    </tr>
+    <tr *ngFor="let p of pending" (click)="clickRow(p,e)" style="background-color:rgb(249, 252, 255)" class="test">
+        <ng-container *ngIf="e.empId==p.empId">
+            <td>
+                <h5>{{p.lvdId}}</h5>
+            </td>
+            <td>
+                <h5>{{p.empId}}</h5>
+            </td>
+            <td>
+                <h5>{{p.lvdStartDate}}</h5>
+            </td>
+            <td>
+                <h5>{{p.lvdEndDate}}</h5>
+            </td>
+            <td>
+                    <h5>{{p.lvdLeaveType}}</h5>
+                </td>
+            <td>
+                <h5>{{p.lvdLeaveStatus}}</h5>
+            </td>
+            <td>
+                <h5>{{p.lvdReason}}</h5>
+            </td>
+            <td>
+                <h5>{{p.lvdAppliedOn}}</h5>
+            </td>
+             <td>
+                <h5>{{p.managerComments}}</h5>
+            </td>
+          </ng-container>
+    </tr>
+    </table>
+    
+    </ng-container>
+    </div>
+    
+    
+    <div align="center" *ngIf="showButton">
+        <a href="manager">
+        <button type="button" class="btn btn-outline-danger pull-right">Approve/Deny</button>
+    </a>  
+    </div>
+          
+    
+   

@@ -1,0 +1,61 @@
+import { Component, OnInit } from '@angular/core';
+import { LeaveDetails } from '../LeaveDetails';
+import { LeaveDetailsService } from '../leave-details.service';
+
+
+
+@Component({
+  selector: 'app-manager-actions',
+  templateUrl: './manager-actions.component.html',
+  styleUrls: ['./manager-actions.component.css']
+})
+export class ManagerActionsComponent implements OnInit {
+  msg: any
+  ld: LeaveDetails[];
+  message: string;
+  empId: 3000;
+  empName: "Gaurav";
+  constructor(private ldser: LeaveDetailsService) {}
+   
+
+  ngOnInit() {
+  }
+
+  approve(lform) {
+    //console.log(lform)
+    // var leaveid = lform.value.lid;
+    // localStorage.setItem("lid", leaveid);
+    // var empid = lform.value.eid;
+    // localStorage.setItem("eid", empid);
+    // var ls = "APPROVED";
+    // localStorage.setItem("status", ls);
+    var mComments = lform.value.mc;
+    localStorage.setItem("mc", mComments);
+    
+    this.ldser.getApproveOrDeny().subscribe(
+      data => { this.msg = data },
+      error => { this.message = error.error.text },
+    );
+    console.log("Approved");
+    console.log(this.msg);
+    this.msg;
+  }
+  deny(lform) {
+    // var leaveid = lform.value.lid;
+    // localStorage.setItem("lid", leaveid);
+    // var empid = lform.value.eid;
+    // localStorage.setItem("eid", empid);
+    // var ls = "DENIED";
+    // localStorage.setItem("status", ls);
+    var mComments = lform.value.mc;
+    localStorage.setItem("mc", mComments);
+    this.ldser.getApproveOrDeny().subscribe(
+      data => {this.msg = data},
+      error =>{this.message= error.error.text},
+      );
+    // console.log(ls);
+    console.log(this.msg);
+    this.msg;
+  }
+}
+

@@ -1,0 +1,77 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<section class="login-block">
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 login-sec">
+        <h2 class="text-center">Manager-Actions</h2>
+        <form #lform="ngForm">
+          <div class="form-group">
+            <p style="color:rgb(59, 137, 176)">EmployeeID: <span>{{empId}}</span></p>
+
+          </div>
+          <div class="form-group">
+           <p style="color:rgb(59, 137, 176)">EmployeeName: <span>{{empName}}</span></p><br>
+          </div>
+          <div class="form-group">
+         <b style="color:rgb(59, 137, 176)">ManagerComments:</b> <br><input type="text" name="mc" #mc="ngModel" ngModel class="form-control" required><br>
+          </div>
+
+
+
+          <div class="form-check">
+
+            <button (click)="approve(lform)" class="btn btn-success float-left">Approve</button>
+            <button (click)="deny(lform)" class="btn btn-danger btn-logind">Deny</button>
+            <button (click)="cancel()" class="btn btn-loginc">Cancel</button>
+            <div class="alert alert-info" *ngIf="isValidFormSubmitted == true">
+              <strong>Message: </strong><h3>{{this.message}}</h3>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+      <div class="col-md-8 banner-sec">
+       
+
+          
+          
+          <div class="carousel-inner" >
+            <div class="carousel-item active">
+                <div class="form-group">
+                <p style="color:rgb(59, 137, 176)">StartDate: <span>{{sDate}}</span></p>
+                
+                </div>
+                  <div class="form-group">
+                  <p style="color:rgb(59, 137, 176)">EndDate: <span>{{eDate}}</span></p>
+                  
+                  </div>
+                  <div class="form-group">
+                  <p style="color:rgb(59, 137, 176)">Leave Balance: <span>{{leaveBal}}</span></p>
+                  
+                  </div>
+                  <div class="form-group">
+                  <p style="color:rgb(59, 137, 176)">LeaveType: <span>{{leaveType}}</span></p> 
+                  
+                  </div>
+                  <div class="form-group">
+                  <p style="color:rgb(59, 137, 176)">Reason: <span>{{reason}}</span></p> 
+                  
+                  </div>
+              <div class="carousel-caption d-none d-md-block">
+                <div class="banner-text">
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </section>
